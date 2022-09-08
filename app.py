@@ -25,11 +25,11 @@ warnings.filterwarnings("ignore")
 st.header('Model Deployment: CO2_Emission_Forecasting')
 def plot_result_data():
         #plt.figure(figsize=(10,8))
-        st.line_chart(data, label='original')
-        st.line_chart(model_final.fittedvalues, label='forecast')
-        st.subheader('Forecast')
+        st.line_chart(data, y='CO2')
+        st.line_chart(model_final.fittedvalues, y='CO2')
+        #st.subheader('Forecast')
         #plt.legend(loc='upper left', fontsize=8)
-        #st.line_chart()
+        st.pyplot()
 
 def plot_forecasted_data():
         fig = go.Figure()
