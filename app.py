@@ -4,8 +4,9 @@ Created on Thu Sep 07 21:01:17 2020
 
 """
 #################################################################
-import pandas as pd
 import streamlit as st
+st.set_page_config(layout="wide")
+import pandas as pd
 import numpy as np
 import pickle
 import seaborn as sns
@@ -21,10 +22,9 @@ from plotly import graph_objs as go
 import warnings
 warnings.filterwarnings("ignore")
 ##################################################################
-st.set_page_config(layout="wide")
 st.header('Model Deployment: CO2_Emission_Forecasting')
 def plot_result_data():
-        plt.figure(figsize=(12,8))
+        plt.figure(figsize=(10,8))
         plt.plot(data, label='original')
         plt.plot(model_final.fittedvalues, label='forecast')
         plt.title('Forecast')
@@ -34,10 +34,10 @@ def plot_result_data():
 def plot_forecasted_data():
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=forecast_data.index,y=forecast_data['CO2'], name="CO2 Emission"))
-        st.plotly_chart(fig)
+        st.plotly_chart(fig,use_container_width=True)
 
 def user_input_features():
-    features = st.sidebar.number_input("No of Years to predict : ", min_value=1, max_value=100, value=1, step=1)
+    features = st.slider.number_input("No of Years to predict : ", min_value=1, max_value=100, value=1, step=1)
     return features
 
 dateparse = lambda x: pd.to_datetime(x, format = '%Y')
@@ -56,13 +56,12 @@ future_dates=[data.index[-1]+ DateOffset(years=x)for x in range(0,df)]
 forecast_data=pd.DataFrame(index=future_dates[1:],columns=data.columns)
 end = len(data)+len(forecast_data)
 forecast_data['CO2'] = model_final.predict(start = 215, end = end , dynamic= True)
-st.subheader('Summary')
+st.subheader('Forecasted Data')
 plot_forecasted_data()
-plot_result_data()
 # Forecasted Values 
 st.subheader(f'Predicted Values for next {df-1} years')
 st.write(forecast_data.tail(df))
-st.subheader('Predicted Result')
+st.subheader('Predicted Result : Overview ')
 plot_forecasted_data()
 
 #loaded_model = pickle.load(open('Forecast_model.pkl','rb'))
