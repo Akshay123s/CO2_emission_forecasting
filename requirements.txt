@@ -7,3 +7,4 @@ sklearn
 streamlit
 plotly
 statsmodels
+openpyxl
