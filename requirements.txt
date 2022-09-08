@@ -6,3 +6,4 @@ statsmodels
 sklearn
 streamlit
 plotly
+statsmodels
