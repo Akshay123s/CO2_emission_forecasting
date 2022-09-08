@@ -4,7 +4,6 @@ Created on Thu Sep 07 21:01:17 2020
 
 """
 #################################################################
-st.set_page_config(layout="wide")
 import pandas as pd
 import streamlit as st
 import numpy as np
@@ -21,9 +20,8 @@ from statsmodels.tsa.arima_model import ARIMAResults
 from plotly import graph_objs as go
 import warnings
 warnings.filterwarnings("ignore")
-
-
 ##################################################################
+st.set_page_config(layout="wide")
 st.header('Model Deployment: CO2_Emission_Forecasting')
 def plot_result_data():
         plt.figure(figsize=(12,8))
