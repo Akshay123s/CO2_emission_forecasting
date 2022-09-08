@@ -24,12 +24,12 @@ warnings.filterwarnings("ignore")
 ##################################################################
 st.header('Model Deployment: CO2_Emission_Forecasting')
 def plot_result_data():
-        plt.figure(figsize=(10,8))
-        plt.plot(data, label='original')
-        plt.plot(model_final.fittedvalues, label='forecast')
-        plt.title('Forecast')
-        plt.legend(loc='upper left', fontsize=8)
-        plt.show()
+        #plt.figure(figsize=(10,8))
+        st.line_chart(data, label='original')
+        st.line_chart(model_final.fittedvalues, label='forecast')
+        st.subheader('Forecast')
+        #plt.legend(loc='upper left', fontsize=8)
+        #st.line_chart()
 
 def plot_forecasted_data():
         fig = go.Figure()
