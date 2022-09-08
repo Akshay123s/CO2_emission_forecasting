@@ -1,7 +1,6 @@
 pandas
 numpy
 matplotlib
-pickle
 seaborn
 statsmodels
 math
