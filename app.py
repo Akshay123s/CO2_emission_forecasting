@@ -37,7 +37,7 @@ def plot_forecasted_data():
         st.plotly_chart(fig,use_container_width=True)
 
 def user_input_features():
-    features = st.slider.number_input("No of Years to predict : ", min_value=1, max_value=100, value=1, step=1)
+    features = st.number_input("No of Years to predict : ", min_value=1, max_value=100, value=1, step=1)
     return features
 
 dateparse = lambda x: pd.to_datetime(x, format = '%Y')
