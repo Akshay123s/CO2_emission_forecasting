@@ -13,7 +13,7 @@ import seaborn as sns
 import matplotlib
 import plotly
 import datetime
-matplotlib.use( 'tkagg' )
+#matplotlib.use( 'tkagg' )
 import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 from pandas.tseries.offsets import DateOffset
