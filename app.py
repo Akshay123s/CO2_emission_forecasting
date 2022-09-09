@@ -26,7 +26,7 @@ st.header('Model Deployment: CO2_Emission_Forecasting')
 def plot_result_data():
         #plt.figure(figsize=(10,8))
         st.line_chart(data, y='CO2')
-        st.line_chart(model_final.fittedvalues, y='CO2')
+        #st.line_chart(model_final.fittedvalues, y='CO2')
         #st.subheader('Forecast')
         #plt.legend(loc='upper left', fontsize=8)
         st.pyplot()
