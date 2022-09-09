@@ -29,7 +29,7 @@ def plot_result_data():
         #st.line_chart(model_final.fittedvalues, y='CO2')
         #st.subheader('Forecast')
         #plt.legend(loc='upper left', fontsize=8)
-        st.pyplot()
+        #st.pyplot()
 
 def plot_forecasted_data():
         fig = go.Figure()
