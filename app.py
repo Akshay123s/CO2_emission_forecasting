@@ -47,7 +47,7 @@ st.subheader(" CO2 emission should be predicted for how many years ?")
 df = user_input_features()+1
 st.info(f'{df-1} Years')
 
-model_final = ARIMA(data['CO2'],order = (3,1,3))
+model_final = ARIMA(data['CO2'],order = (7,1,3))
 model_final = model_final.fit()
 model_final.fittedvalues.tail()
 # load the model from disk
